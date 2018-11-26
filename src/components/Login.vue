@@ -1,59 +1,75 @@
 <template>
-  <div class="login">
-    <h3>Sign In</h3>
-    <input type="text" v-model="email" placeholder="Email"><br>
-    <input type="password" v-model="password" placeholder="Password"><br>
-    <button v-on:click="signIn">Connection</button>
-    <p>You don't have an account ? You can <router-link to="/sign-up">create one</router-link></p>
+  <div class="row">
+    <div class="col">
+      <img class="img-thumbnail" alt="Responsive image" src="../assets/login.jpg" />
+    </div>
+    <div class="col">
+      <h1>Welcome to o.b</h1>
+
+      <form class="justify-content-center">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            v-model="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          >
+          <small
+            id="emailHelp"
+            class="form-text text-muted"
+          >We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            v-model="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+          >
+        </div>
+
+        <button type="submit" class="btn btn-outline-dark" @click="signIn">LOG IN</button>
+      </form>
+      <p>You don't have an account ? You can
+        <router-link to="/sign-up">create one</router-link>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-  import firebase from 'firebase'
+import firebase from "firebase";
 
-  export default {
-    name: 'login',
-    data: function() {
-      return {
-        email: '',
-        password: ''
-      }
-    },
-    methods: {
-      signIn: function() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('hello')
+export default {
+  name: "login",
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    signIn() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(
+          user => {
+            this.$router.replace("hello");
           },
-          (err) => {
-            alert('Oops. ' + err.message)
+          err => {
+            alert("Oops. " + err.message);
           }
         );
-      }
     }
   }
+};
 </script>
 
-<style scoped>  /* "scoped" attribute limit the CSS to this component only */
-  .login {
-    margin-top: 40px;
-  }
-  input {
-    margin: 10px 0;
-    width: 20%;
-    padding: 15px;
-  }
-  button {
-    margin-top: 20px;
-    width: 10%;
-    cursor: pointer;
-  }
-  p {
-    margin-top: 40px;
-    font-size: 13px;
-  }
-  p a {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+<style scoped>
 </style>

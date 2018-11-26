@@ -8,7 +8,7 @@ import firebase from 'firebase'
 
 Vue.use(Router)
 
-let router = new Router({
+const router = new Router({
   routes: [{
       path: '*',
       redirect: '/login'

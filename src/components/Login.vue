@@ -1,6 +1,7 @@
 <template>
+<div class="container-fluid card shadow-lg bg-white p-5">
   <div class="row">
-    <div class="col">
+    <div class="col offset-3">
       <img class="img-thumbnail" alt="Responsive image" src="../assets/login.jpg" />
     </div>
     <div class="col">
@@ -40,6 +41,7 @@
       </p>
     </div>
   </div>
+</div>
 </template>
 
 <script>

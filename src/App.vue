@@ -1,6 +1,5 @@
 <template>
-  <div class="container-fluid card shadow-lg bg-white p-5" id="app">
-    <img src="./assets/o-b.svg">
+  <div id="app">
     <router-view></router-view>
   </div>
 </template>

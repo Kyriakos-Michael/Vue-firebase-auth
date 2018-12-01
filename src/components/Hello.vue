@@ -1,19 +1,20 @@
 <template>
-  <div class="hello">
-    
+  <div>
+    <nav-bar></nav-bar>
     <button v-on:click="logout">Logout</button>
   </div>
 </template>
 
 <script>
 import firebase from "firebase";
+import NavBar from "./shared/NavBar";
 
 export default {
-  name: "hello",
   data() {
-    return {
-   
-    };
+    return {};
+  },
+  components: {
+    NavBar
   },
   methods: {
     logout: () => {

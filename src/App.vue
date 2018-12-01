@@ -19,6 +19,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   border-radius: 10px;
-  max-width: 1200px;
 }
 </style>

@@ -15,7 +15,7 @@ let config = {
 };
 
 firebase.initializeApp(config)
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged((user) => {
   if (!app) {
     app = new Vue({
       el: '#app',

@@ -21,6 +21,5 @@ export default {
   margin-top: 60px;
   border-radius: 10px;
   max-width: 1200px;
-
 }
 </style>
